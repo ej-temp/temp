@@ -1,10 +1,10 @@
 import React from 'react';
-import ListTemps from './containers/ListTemps';
+import Homepage from './containers/Homepage';
 
 export default function App() {
   return (
     <>
-      <ListTemps />
+      <Homepage />
     </>
   );
 }
