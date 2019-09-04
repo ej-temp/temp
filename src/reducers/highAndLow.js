@@ -1,4 +1,4 @@
-import { FETCH_LOW_TEMP, FETCH_HIGH_TEMP } from '../actions/temps';
+import { FETCH_LOW_TEMP, FETCH_HIGH_TEMP, FETCH_AVG_TEMP } from '../actions/temps';
 
 const initialState = { 
   lowTemp: {
@@ -8,7 +8,8 @@ const initialState = {
   highTemp: {
     name: '',
     temp: null
-  }
+  },
+  avgTemp: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -28,6 +29,12 @@ export default function reducer(state = initialState, action) {
           name: action.payload.name,
           temp: action.payload.temp
         }
+      };
+    case FETCH_AVG_TEMP:
+      console.log(action.payload);
+      return {
+        ...state,
+        avgTemp: action.payload.avgTemp
       };
     default:
       return state;

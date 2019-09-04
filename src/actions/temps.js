@@ -1,4 +1,4 @@
-import { getAllTemps, getHottestTemp, getColdestTemp } from '../services/tempApi';
+import { getAllTemps, getHottestTemp, getColdestTemp, getAvgTemp } from '../services/tempApi';
 
 export const FETCH_TEMPS = 'FETCH_TEMPS';
 export const fetchTemps = () => ({
@@ -16,4 +16,10 @@ export const FETCH_LOW_TEMP = 'FETCH_LOW_TEMP';
 export const fetchLowTemp = () => ({
   type: FETCH_LOW_TEMP,
   payload: getColdestTemp()
+});
+
+export const FETCH_AVG_TEMP = 'FETCH_AVG_TEMP';
+export const fetchAvgTemp = () => ({
+  type: FETCH_AVG_TEMP,
+  payload: getAvgTemp()
 });

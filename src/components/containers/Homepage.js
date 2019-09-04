@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Temps from '../temps/Temps';
 import HighAndLow from '../highAndLow/HighAndLow';
 import { connect } from 'react-redux';
-import { fetchTemps, fetchHighTemp, fetchLowTemp } from '../../actions/temps';
-import { getTemps, getHighTemp, getLowTemp } from '../../selectors/tempsSelectors';
+import { fetchTemps, fetchHighTemp, fetchLowTemp, fetchAvgTemp } from '../../actions/temps';
+import { getTemps, getHighTemp, getLowTemp, getAvgTemp } from '../../selectors/tempsSelectors';
 
 class Homepage extends PureComponent {
   static propTypes = {
@@ -20,23 +20,26 @@ class Homepage extends PureComponent {
       name: PropTypes.string.isRequired,
       temp: PropTypes.number
     }).isRequired,
+    avgTemp: PropTypes.number,
     fetchTemps: PropTypes.func.isRequired,
     fetchHigh: PropTypes.func.isRequired,
-    fetchLow: PropTypes.func.isRequired
+    fetchLow: PropTypes.func.isRequired,
+    fetchAvg: PropTypes.func.isRequired
   }
 
   componentDidMount() {
     this.props.fetchTemps();
     this.props.fetchHigh();
     this.props.fetchLow();
+    this.props.fetchAvg();
   }
 
   render() {
-    const { temps, highTemp, lowTemp } = this.props;
+    const { temps, highTemp, lowTemp, avgTemp } = this.props;
     return (
       <>
         <Temps temps={temps} />
-        <HighAndLow highTemp={highTemp} lowTemp={lowTemp} />
+        <HighAndLow highTemp={highTemp} lowTemp={lowTemp} avgTemp={avgTemp} />
       </>
     );
   }
@@ -45,7 +48,8 @@ class Homepage extends PureComponent {
 const mapStateToProps = state => ({
   temps: getTemps(state),
   highTemp: getHighTemp(state),
-  lowTemp: getLowTemp(state)
+  lowTemp: getLowTemp(state),
+  avgTemp: getAvgTemp(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -57,6 +61,9 @@ const mapDispatchToProps = dispatch => ({
   },
   fetchLow() {
     dispatch(fetchLowTemp());
+  },
+  fetchAvg() {
+    dispatch(fetchAvgTemp());
   }
 });
 

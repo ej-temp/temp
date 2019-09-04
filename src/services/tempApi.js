@@ -32,12 +32,12 @@ export const getHottestTemp = () => {
     });
 };
 
-// export const getAvgTemp = () => {
-//   return fetch('https://ej-temp.herokuapp.com/api/v1/temperatures/average')
-//     .then(res => ([res.ok, res.json()]))
-//     .then(([ok, json]) => {
-//       if(!ok) throw 'Unable to fetch temperatures.';
+export const getAvgTemp = () => {
+  return fetch('https://ej-temp.herokuapp.com/api/v1/temperatures/average')
+    .then(res => ([res.ok, res.json()]))
+    .then(([ok, json]) => {
+      if(!ok) throw 'Unable to fetch temperatures.';
 
-//       return json;
-//     });
-// };
+      return json;
+    });
+};
