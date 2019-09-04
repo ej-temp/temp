@@ -1,5 +1,5 @@
 import React from 'react';
-import ListTemps from './containers/ListTemps';
+import Homepage from './containers/Homepage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={ListTemps} />
+        <Route exact path="/" component={Homepage} />
         <Route path="/:id" component={Detail} />
       </Switch>
     </Router>

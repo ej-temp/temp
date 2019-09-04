@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Temp({ name, temp }) {
   return (
     <>
-      <h2>name: {name}</h2>
+      <h2>location: {name}</h2>
       <h4>Temperature: {temp}</h4>
     </>
   );
