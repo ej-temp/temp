@@ -1,5 +1,5 @@
 export const getAllTemps = () => {
-  return fetch('')
+  return fetch('https://ej-temp.herokuapp.com/api/v1/temperatures')
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to fetch temperatures.';
@@ -7,7 +7,7 @@ export const getAllTemps = () => {
       return json;
     })
     .then(json => json.map(temp => ({
-      location: temp.location,
+      name: temp.name,
       temp: temp.temp
     })));
 };

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import reducer from './temps';
+import getAllTemps from './temps';
 
 export default combineReducers({
-  reducer
+  getAllTemps
 });
