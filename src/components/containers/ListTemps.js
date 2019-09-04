@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Temps from '../temps/Temps';
 import { connect } from 'react-redux';
-import { fetchTemps } from '../../actions/temps';
+import { fetchTemps, } from '../../actions/temps';
 import { getTemps } from '../../selectors/tempsSelectors';
 
 class ListTemps extends PureComponent {
@@ -20,7 +20,6 @@ class ListTemps extends PureComponent {
 
   render() {
     const { temps } = this.props;
-    console.log('temps is ', temps);
     return <Temps temps={temps} />;
   }
 }
