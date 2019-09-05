@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Temp component renders Temp 1`] = `
+<Fragment>
+  <h2>
+    location: 
+    name
+  </h2>
+  <h4>
+    Temperature: 
+    5
+  </h4>
+</Fragment>
+`;
