@@ -1,4 +1,4 @@
-import { FETCH_DETAIL } from '../actions/temps';
+import { FETCH_DETAIL, CLEAR_DETAIL } from '../actions/temps';
 
 const initialState = {
   temps: [],
@@ -12,6 +12,12 @@ export default function reducer(state = initialState, action) {
         ...state, 
         name: action.payload.location.name,
         temps: action.payload.temps
+      };
+    case CLEAR_DETAIL:
+      return {
+        ...state,
+        name: '',
+        temps: []
       };
     default:
       return state;
