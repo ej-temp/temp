@@ -8,7 +8,8 @@ export const getAllTemps = () => {
     })
     .then(json => json.map(temp => ({
       name: temp.name,
-      temp: temp.temp
+      temp: temp.temp,
+      id: temp._id
     })));
 };
 
