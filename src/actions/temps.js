@@ -12,6 +12,11 @@ export const fetchDetails = (id) => ({
   payload: getDetails(id)
 });
 
+export const CLEAR_DETAIL = 'CLEAR_DETAIL';
+export const clearDetail = () => ({
+  type: CLEAR_DETAIL
+});
+
 export const FETCH_HIGH_TEMP = 'FETCH_HIGH_TEMP';
 export const fetchHighTemp = () => ({
   type: FETCH_HIGH_TEMP,
