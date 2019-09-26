@@ -31,7 +31,6 @@ export default function reducer(state = initialState, action) {
         }
       };
     case FETCH_AVG_TEMP:
-      console.log(action.payload);
       return {
         ...state,
         avgTemp: action.payload.avgTemp

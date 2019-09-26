@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighAndLow component renders HighAndLow 1`] = `
+<Fragment>
+  <h2>
+    low
+  </h2>
+  <h4>
+    location: 
+  </h4>
+  <h5>
+    Temperature: 
+    20
+  </h5>
+  <h2>
+    high
+  </h2>
+  <h4>
+    location: 
+  </h4>
+  <h5>
+    Temperature: 
+    20
+  </h5>
+  <h2>
+    avg
+  </h2>
+  <h5>
+    Temperature: 
+    5
+  </h5>
+</Fragment>
+`;
